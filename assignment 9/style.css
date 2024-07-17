@@ -2325,7 +2325,92 @@
     top: -765px;
     margin: 2px;
 }
-
+.image-sale4{
+  position: relative;
+    top: -748px;
+    left: -268px;
+    width: 1300px;
+}
+.sale-container4{
+  display: flex;
+}
+.sale-image4{
+  width: 187px;
+  position: relative;
+  left: -285px;
+  top: -734px;
+  margin: 2px; 
+}
+.container-banner{
+  top: -675px;
+  left: -287px;
+  width: 1340px;
+  position: relative;
+}
+.image-sale5{
+  position: relative;
+  top: -666px;
+  left: -268px;
+  width: 1300px;
+}
+.sale-container5{
+  display: flex;
+}
+.sale-image5{
+  width: 187px;
+  position: relative;
+  left: -285px;
+  top: -648px;
+  margin: 2px; 
+}
+.image-sale6{
+  position: relative;
+  top: -638px;
+  left: -268px;
+  width: 1300px;
+}
+.sale-container6{
+  display: flex;
+}
+.sale-image6{
+  width: 187px;
+  position: relative;
+  left: -285px;
+  top: -626px;
+  margin: 2px; 
+}
+.image-sale7{
+  position: relative;
+  top: -617px;
+  left: -268px;
+  width: 1300px;
+}
+.sale-container7{
+  display: flex;
+}
+.sale-image7{
+  width: 187px;
+  position: relative;
+  left: -285px;
+  top: -611px;
+  margin: 2px; 
+}
+.imglst{
+  width: 1351px;
+  position: relative;
+  top: -522px;
+  left: -293px;
+}
+.div-end{
+  position: relative;
+  left: -238px;
+  top: -580px;
+}
+.appstore{
+  position: relative;
+  top: -717px;
+  left: 240px;
+}
   /* Tablet styles */
   @media (max-width: 380px) {
     

@@ -2634,10 +2634,10 @@
     left: 1px;
   }
   .last{
-    top: 657px;
-    width: 410px;
-    height: 96px;
-    left: -3px;
+    top: -116px;
+    width: 395px;
+    height: 100px;
+    left: 23px;
   }
   .lastimg{
   left: 1px;
@@ -2645,7 +2645,139 @@
   .h3{
     left: 1px;
   }
-  
+  .save{
+    flex-wrap: wrap;
+    top: 1872px;
+        position: relative;
+  }
+.saving{
+  top: 1733px;
+}
+.beautty-container{
+  top: -798px;
+  width: 1467px;
+  height: 35px;
+}
+.beautty-sale{
+  top: -770px;
+}
+.beautty-sale2{
+  top: -730px;
+  left: 1px;
+}
+.beautty-sale3{
+  top: -56px;
+  left: 1px;
+}
+.beautty-sale4{
+  top: 1px;
+  left: 1px;
+}
+.image--july{
+  top: 23px;
+  width: 369px;
+  height: 100px;
+  left: -4px;
+}
+.image--h1{
+  top: 30px;
+  left: 1px;
+}
+.brand-store{
+  flex-wrap: wrap;
+  top: 902px;
+  position: relative;
+  left: 292px;
+}
+.image-sale{
+  top: 53px;
+  left: 1px;
+  width: 176vh;
+}
+.sale-container{
+  flex-wrap: wrap;
+  top: 861px;
+  position: relative;
+  left: 355px;
+}
+.image-sale2{
+  left: 1px;
+        top: 79px;
+}
+.sale-container2{
+  position: relative;
+  top: 867px;
+  left: 345px;
+  flex-wrap: wrap;
+}
+.image-sale3{
+  left: 1px;
+  top: 106px;
+}
+.sale-container3{
+  top: 887px;
+        position: relative;
+        left: 349px;
+        flex-wrap: wrap;
+}
+.image-sale4{
+  top: 168px;
+  left: 1px;
+  width: 1109px;
+}
+.sale-container4{
+  position: relative;
+  top: 926px;
+  left: 358px;
+  flex-wrap: wrap;
+}
+.image-sale5{
+  top: 248px;
+  left: 1px;
+  width: 1079px;
+}
+.sale-container5{
+  top: 923px;
+  position: relative;
+  left: 357px;
+  flex-wrap: wrap;
+}
+.image-sale6{
+  top: 285px;
+  left: 1px;
+  width: 1269px;
+}
+.sale-container6{
+  top: 929px;
+  position: relative;
+  left: 347px;
+  flex-wrap: wrap;
+}
+.image-sale7{
+  top: 315px;
+  left: -6px;
+  width: 997px;
+}
+.sale-container7{
+  position: relative;
+  top: 976px;
+  left: 352px;
+  flex-wrap: wrap;
+}
+.container-banner{
+  left: -1px;
+  top: 244px;
+  width: 369px;
+  height: 95px;
+}
+.div-end{
+  top: 358px;
+  left: 1px;
+}
+.appstore{
+  top: 361px;
+  left: 1px;
+}
   }
   .lastdiv{
     position: relative;

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Todo App</title>
+</head>
+
+<body>
+<div class="container">
+    <h1>Todo App
+    </h1>
+    <input id="todo-input" type="text" placeholder="Add new todo">
+    <input id="todo-datetime" type="datetime-local">
+    <button id="add-todo-btn">Add</button>
+    <ul id="todo-list"></ul>
+</div>
+     
+<script type="module">
+  // Import the functions you need from the SDKs
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getDatabase, ref, set, push, onValue, remove } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBJpVJsARf2YaLB58t0THDKx85Fwdnuftc",
+    authDomain: "form-5f5db.firebaseapp.com",
+    projectId: "form-5f5db",
+    storageBucket: "form-5f5db.firebasestorage.app",
+    messagingSenderId: "982359202777",
+    appId: "1:982359202777:web:79ae811d6dd95a7baa17c8"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  const todoInput = document.getElementById("todo-input");
+  const todoDatetime = document.getElementById("todo-datetime");
+  const todoList = document.getElementById("todo-list");
+  const btn = document.getElementById("add-todo-btn");
+
+  // Add Todo functionality
+  btn.addEventListener("click", () => {
+    const text = todoInput.value;
+    const datetime = todoDatetime.value;  // Get the user-selected date and time
+
+    if (text.trim() === "" || !datetime) return;  // Don't add empty todos or if date is not selected
+
+    const todoRef = push(ref(db, "todos"));  // Push a new todo with a unique key
+
+    // Set the todo data in the database
+    set(todoRef, { 
+      text: text,
+      timestamp: datetime  // Store the user-selected date and time
+    }).then(() => {
+      console.log("Todo added");
+      todoInput.value = "";  // Clear the input field
+      todoDatetime.value = "";  // Clear the date-time input field
+    });
+  });
+
+  // Read and display todos
+  onValue(ref(db, "todos"), (snapshot) => {
+    todoList.innerHTML = "";  // Clear the list before re-rendering
+    snapshot.forEach((childSnapshot) => {
+      const todo = childSnapshot.val();
+      const li = document.createElement("li");
+      const date = new Date(todo.timestamp);  // Convert timestamp to a Date object
+      const formattedDate = date.toLocaleString();  // Format the date to a human-readable string
+
+      li.textContent = `${todo.text} (Due on: ${formattedDate})`;  // Display the text and formatted date
+
+      const editBtn = document.createElement("button");
+      editBtn.textContent = "Edit";
+      editBtn.addEventListener("click", () => {
+        const newText = prompt("Enter new text", todo.text);
+        const newDatetime = prompt("Enter new date and time (YYYY-MM-DDTHH:mm)", todo.timestamp);
+        if (newText && newDatetime) {
+          set(ref(db, "todos/" + childSnapshot.key), { text: newText, timestamp: newDatetime });
+        }
+      });
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Delete";
+      deleteBtn.addEventListener("click", () => {
+        remove(ref(db, "todos/" + childSnapshot.key));  // Remove the todo
+      });
+
+      li.appendChild(editBtn);
+      li.appendChild(deleteBtn);
+      todoList.appendChild(li);
+    });
+  });
+
+</script>
+</body>
+</html>

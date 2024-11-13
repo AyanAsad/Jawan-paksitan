@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz Application</h1>
+        <div id="question-container">
+            <h2 id="question">Question text</h2>
+            <div id="answer-buttons" class="btn-container"></div>
+        </div>
+        <button id="next-btn" class="btn">Next Question</button>
+        <div id="result-container" class="hidden">
+            <h2>Your Score: <span id="score"></span></h2>
+            <button id="restart-btn" class="btn">Restart Quiz</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js"></script>
+    <script>
+       
+        const firebaseConfig = {
+            apiKey: "AIzaSyAO9jH32igi-kI6jeC7oma43v2w2LUhILg",
+            authDomain: "quiz-app-ayan.firebaseapp.com",
+            projectId: "quiz-app-ayan",
+            storageBucket: "quiz-app-ayan.firebasestorage.app",
+            messagingSenderId: "710085484712",
+            appId: "1:710085484712:web:47863d45bee3357a6de29d"
+        };
+        
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+</body>
+</html>
